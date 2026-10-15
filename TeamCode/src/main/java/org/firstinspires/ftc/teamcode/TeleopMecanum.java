@@ -43,7 +43,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
  * we will also need to adjust the "PIDF" coefficients with some that are a better fit for our application.
  */
 
-@TeleOp(name = "Mec StarterBot Teleop", group = "StarterBot")
+@TeleOp(name = "MecTeleopMecanum StarterBot Teleop", group = "StarterBot")
 //@Disabled
 public class TeleopMecanum extends OpMode {
 
@@ -166,7 +166,7 @@ public class TeleopMecanum extends OpMode {
          * Note, moving the joystick forward on most gamepads results in a negative signal, so
          * we invert it before passing it to the function.
          */
-        mecanumDrive(-gamepad1.left_stick_y, gamepad1.left_stick_x, gamepad1.right_stick_x);
+        mecanumDrive(gamepad1.left_stick_y, gamepad1.left_stick_x, gamepad1.right_stick_x);
 
         /*
          * Set the intake power variable to equal the right trigger, minus the left trigger.
